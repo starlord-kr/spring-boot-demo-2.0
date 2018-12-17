@@ -1,0 +1,8 @@
+spring:
+  profiles: test
+
+property :
+  test :
+    name : property first second
+propertyCamelCase: camelCase
+propertyList: camel,case,list
