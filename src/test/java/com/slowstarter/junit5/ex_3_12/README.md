@@ -106,7 +106,7 @@ Test run finished after 190 ms
 BUILD SUCCESSFUL
 ```
 
-* 이 기능의 또 다른 가능한 응용 프로그램은 인터페이스 계약에 대한 테스트를 작성하는 것입니다. 
+* 이 기능의 또 다른 가능한 응용은 interface-contract에 대한 테스트를 작성하는 것입니다. 
  예를 들어, Object.equals 또는 Comparable.compareTo의 구현이 다음과 같이 동작하는 방법에 대한 테스트를 작성할 수 있습니다.
 ```sh
 public interface Testable<T> {
@@ -170,8 +170,25 @@ public interface ComparableContract<T extends Comparable<T>> extends Testable<T>
 }
 ```
 
+* 그런 다음 테스트 클래스에서 두 계약 인터페이스를 구현하여 해당 테스트를 상속 할 수 있습니다. 물론 추상 메소드를 구현해야합니다.
 ```sh
-```
+class StringTests implements ComparableContract<String>, EqualsContract<String> {
 
-```sh
+    @Override
+    public String createValue() {
+        return "foo";
+    }
+
+    @Override
+    public String createSmallerValue() {
+        return "bar"; // 'b' < 'f' in "foo"
+    }
+
+    @Override
+    public String createNotEqualValue() {
+        return "baz";
+    }
+
+}
 ```
+* 위의 테스트는 단지 예로서 의미가 있으므로 완전한 것은 아닙니다.

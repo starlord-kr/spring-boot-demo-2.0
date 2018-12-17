@@ -1,4 +1,4 @@
-package com.slowstarter.junit5;
+package com.slowstarter.junit5.ex_3_12;
 
 import java.lang.reflect.Method;
 import java.util.logging.Logger;

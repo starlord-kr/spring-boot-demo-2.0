@@ -1,4 +1,4 @@
-package com.slowstarter.junit5;
+package com.slowstarter.junit5.ex_3_12;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
