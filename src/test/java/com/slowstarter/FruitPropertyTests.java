@@ -1,5 +1,7 @@
 package com.slowstarter;
 
+import com.slowstarter.properties.FruitProperty1;
+import com.slowstarter.properties.FruitProperty2;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +21,11 @@ import static org.junit.Assert.assertThat;
 @ActiveProfiles({"test", "fruit"})
 public class FruitPropertyTests {
 
-    @Autowired FruitProperty1 fruitProperty1;
+    @Autowired
+    FruitProperty1 fruitProperty1;
 
-    @Autowired FruitProperty2 fruitProperty2;
+    @Autowired
+    FruitProperty2 fruitProperty2;
 
     @Test public void test1() {
         List<Map> fruitData = fruitProperty1.getList();
