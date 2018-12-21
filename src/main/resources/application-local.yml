@@ -1,13 +1,6 @@
-spring:
-  profiles: local
-  h2:
-    console:
-      enabled: true
-
 server:
   port: 8080
 
-
-# H2 메모리 DB를 사용하기 위한 설정
-datasource:
-  url: jdbc:h2:mem:testdb
+spring:
+  profiles: local
+  profiles.include: 'database'
