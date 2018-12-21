@@ -1,6 +1,6 @@
 ---
 spring:
-  profiles: local,database
+  profiles: local,database,fruit
   h2:
     console:
       enabled: true

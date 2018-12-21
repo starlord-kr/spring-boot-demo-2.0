@@ -24,3 +24,8 @@
 /dist/
 /nbdist/
 /.nb-gradle/
+
+
+### In Modules ###
+spring-boot-jpa/build/
+spring-boot-jpa/out/

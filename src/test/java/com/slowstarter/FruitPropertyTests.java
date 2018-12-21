@@ -1,5 +1,6 @@
 package com.slowstarter;
 
+import com.slowstarter.entity.Fruit;
 import com.slowstarter.properties.FruitProperty1;
 import com.slowstarter.properties.FruitProperty2;
 import org.junit.Test;
