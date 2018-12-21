@@ -1,0 +1,27 @@
+---
+spring:
+  profiles: local
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  datasource:
+    hikari:
+#      jdbc-url: jdbc:h2:mem:testdb;DB_CLOSE_ON_EXIT=TRUE
+      pool-name: test-spring-boot-jpa
+      driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb;DB_CLOSE_ON_EXIT=TRUE
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: create
+---

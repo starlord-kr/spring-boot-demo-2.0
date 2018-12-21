@@ -1,6 +1,6 @@
 package com.slowstarter.properties;
 
-import com.slowstarter.Fruit;
+import com.slowstarter.entity.Fruit;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

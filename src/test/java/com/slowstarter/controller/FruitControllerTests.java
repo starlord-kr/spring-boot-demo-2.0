@@ -1,6 +1,6 @@
 package com.slowstarter.controller;
 
-import com.slowstarter.Fruit;
+import com.slowstarter.entity.Fruit;
 import com.slowstarter.properties.FruitProperty2;
 import com.slowstarter.service.FruitService;
 import org.junit.Test;
