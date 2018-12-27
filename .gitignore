@@ -29,3 +29,6 @@
 ### In Modules ###
 spring-boot-jpa/build/
 spring-boot-jpa/out/
+
+spring-boot-mvc/build/
+spring-boot-mvc/out/

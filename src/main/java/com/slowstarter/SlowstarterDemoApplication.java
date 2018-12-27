@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.slowstarter")
 public class SlowstarterDemoApplication {
 
     public static void main(String[] args) {
@@ -15,6 +15,6 @@ public class SlowstarterDemoApplication {
 
     @GetMapping
     public String HelloWorld() {
-        return "Hello World";
+        return "Hello World 1!";
     }
 }

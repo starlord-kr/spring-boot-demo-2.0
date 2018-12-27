@@ -3,4 +3,8 @@ server:
 
 spring:
   profiles: local
-  profiles.include: 'database'
+  profiles.include: 'database,fruit'
+#  h2:
+#    console:
+#      enabled: true
+#      path: /h2-test

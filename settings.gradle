@@ -1,4 +1,4 @@
-rootProject.name = 'demo'
+rootProject.name = 'spring-boot-demo'
+
 include 'spring-boot-jpa'
 include 'spring-boot-mvc'
-
