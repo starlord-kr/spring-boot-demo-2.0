@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true" scan="true">
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
+
+    <springProfile name="local">
+        <property name="LOG_PATH" value="src/main/resources/logs" />
+    </springProfile>
+
+    <springProfile name="dev,production">
+        <property name="LOG_PATH" value="/demo/logs" />
+    </springProfile>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>[%d{yyyy-MM-dd}] [%d{HH:mm:ss.SSS}] [%p] [%c{1}] [%F:%L [%m]%n</pattern>
+        </layout>
+    </appender>
+
+    <!-- DEMO BASE -->
+    <property name="LOG_FILE" value="demo" />
+    <appender name="DEMO_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_PATH}/${LOG_FILE}.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_PATH}/${LOG_FILE}_%d{yyyyMMdd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:SSS} [%-5p] [%F]%M\(%L\) : %m%n</pattern>
+        </encoder>
+    </appender>
+    <!-- DEMO BASE -->
+
+    <!-- DEMO REQUEST -->
+    <property name="DEMO_REQUEST" value="demo_request" />
+    <appender name="DEMO_REQUEST" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_PATH}/${DEMO_REQUEST}.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_PATH}/${DEMO_REQUEST}_%d{yyyyMMdd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:SSS} : %m%n</pattern>
+        </encoder>
+    </appender>
+    <logger name="com.slowstarter.controller" additivity="FALSE">
+        <level value="INFO" />
+        <appender-ref ref="DEMO_REQUEST" />
+    </logger>
+    <!-- DEMO REQUEST -->
+
+    <logger name="org.springframework.web.filter.CommonsRequestLoggingFilter">
+        <level value="DEBUG" />
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="DEMO_FILE"/>
+        <appender-ref ref="DEMO_REQUEST"/>
+    </root>
+
+</configuration>

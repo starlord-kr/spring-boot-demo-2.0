@@ -4,9 +4,10 @@ import com.slowstarter.mvc.exception.InvalidParameterException;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-public class HelloController2 {
+@RequestMapping("/v3/hi/")
+public class HiController3 {
 
-    @GetMapping("/v2/hello/{bool}")
+    @GetMapping("{bool}")
     public Boolean returnTrue(@PathVariable("bool") Boolean bool) {
         if(!Boolean.TRUE.equals(bool)) {
             throw new InvalidParameterException("{bool} must be TRUE!");
@@ -14,7 +15,7 @@ public class HelloController2 {
         return bool;
     }
 
-    @PostMapping("/v2/hello/{bool}")
+    @PostMapping("{bool}")
     public Boolean postTrue(@PathVariable("bool") Boolean bool) {
         if(!Boolean.TRUE.equals(bool)) {
             throw new InvalidParameterException("{bool} must be TRUE!");
@@ -22,7 +23,7 @@ public class HelloController2 {
         return bool;
     }
 
-    @PutMapping("/v2/hello/{bool}")
+    @PutMapping("{bool}")
     public Boolean putTrue(@PathVariable("bool") Boolean bool) {
         if(!Boolean.TRUE.equals(bool)) {
             throw new InvalidParameterException("{bool} must be TRUE!");
@@ -30,7 +31,7 @@ public class HelloController2 {
         return bool;
     }
 
-    @DeleteMapping("/v2/hello/{bool}")
+    @DeleteMapping("{bool}")
     public Boolean deleteTrue(@PathVariable("bool") Boolean bool) {
         if(!Boolean.TRUE.equals(bool)) {
             throw new InvalidParameterException("{bool} must be TRUE!");

@@ -5,11 +5,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 @Service
-public class HelloService {
+public class HiService {
 
-    private static Logger LOG = LoggerFactory.getLogger(HelloService.class);
+    private static Logger LOG = LoggerFactory.getLogger(HiService.class);
 
     public void call() {
-        LOG.info("-- HelloService.call()");
+        LOG.info("-- HiService.call()");
     }
 }

@@ -1,13 +1,21 @@
 server:
-  port: 80
+  port: 8080
 
 spring:
-  profiles: production
+  profiles:
+    active: local
   profiles.include: 'database,fruit'
   devtolls:
     restart:
-      enabled: false
+      enabled: true
+
+logging:
+  path: src/main/resources/logs
+
 #  h2:
 #    console:
 #      enabled: true
 #      path: /h2-test
+
+#banner:
+#  location:

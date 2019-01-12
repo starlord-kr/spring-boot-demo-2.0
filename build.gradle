@@ -6,9 +6,16 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath ("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
 }
+
+//plugins {
+//    id 'java'
+//    id 'eclipse'
+//    id 'org.springframework.boot' version '2.1.0.RELEASE'
+//    id 'io.spring.dependency-management' version '2.1.0.RELEASE' // ?? error
+//}
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
@@ -25,26 +32,26 @@ repositories {
 
 
 dependencies {
-    implementation('org.springframework.boot:spring-boot-starter-web')
-    testImplementation('org.springframework.boot:spring-boot-starter-test')
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-    annotationProcessor("org.projectlombok:lombok")
-    compileOnly('org.projectlombok:lombok')
+    annotationProcessor 'org.projectlombok:lombok'
+    compileOnly 'org.projectlombok:lombok'
 
-    annotationProcessor ('org.springframework.boot:spring-boot-configuration-processor')
-    compileOnly('org.springframework.boot:spring-boot-configuration-processor')
+    annotationProcessor  'org.springframework.boot:spring-boot-configuration-processor'
+    compileOnly 'org.springframework.boot:spring-boot-configuration-processor'
 
-    compile('org.springframework.boot:spring-boot-starter-data-jpa')
-    compile('com.h2database:h2')
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+    compile 'com.h2database:h2'
+    compile 'org.springframework.boot:spring-boot-devtools'
 
-    runtimeOnly project(':spring-boot-jpa')
-    runtimeOnly project(':spring-boot-mvc')
+//    runtimeOnly 'com.h2database:h2 '
+    runtimeOnly 'mysql:mysql-connector-java'
 
+    testCompile 'org.junit.jupiter:junit-jupiter-api' // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
 
-//    runtimeOnly('com.h2database:h2')
-    runtimeOnly('mysql:mysql-connector-java')
-
-    testCompile('org.junit.jupiter:junit-jupiter-api') // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
+    runtimeOnly project (':spring-boot-jpa')
+    runtimeOnly project (':spring-boot-mvc')
 }
 
 compileJava.dependsOn(processResources)

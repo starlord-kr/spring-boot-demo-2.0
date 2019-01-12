@@ -1,4 +1,13 @@
+server:
+  port: 8080
+
 spring:
   profiles: dev
-server:
-  port: 8081
+  profiles.include: 'database,fruit'
+  devtolls:
+    restart:
+      enabled: true
+#  h2:
+#    console:
+#      enabled: true
+#      path: /h2-test
