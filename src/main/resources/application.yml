@@ -1,5 +1,11 @@
 server:
   port: 8080
+  tomcat:
+    accesslog:
+      enabled: true
+      pattern: common
+#      pattern: %t %a "%r" %s (%D ms)
+    basedir: src/main/resources/logs
 
 spring:
   profiles:
@@ -33,4 +39,3 @@ management:
   endpoint:
     health:
       show-details: always
-

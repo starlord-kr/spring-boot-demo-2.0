@@ -62,6 +62,9 @@ bootRun {
     systemProperties System.properties
 }
 
+bootJar {
+}
+
 subprojects {
 
     group = 'com.slowstarter'
