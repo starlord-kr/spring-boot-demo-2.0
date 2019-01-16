@@ -12,6 +12,7 @@ spring:
 logging:
   path: src/main/resources/logs
 
+
 #  h2:
 #    console:
 #      enabled: true
@@ -19,3 +20,17 @@ logging:
 
 #banner:
 #  location:
+
+management:
+  endpoints:
+    enabled-by-default: true
+    web:
+      exposure:
+        include: ["*"]
+#        include: ["metrics", "shutdown", "health", "threaddump", "info"]
+  server:
+    port: 8888
+  endpoint:
+    health:
+      show-details: always
+
